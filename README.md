@@ -1,6 +1,6 @@
 <div align="center">
 
-# BUET CSE Fest 2026 — DL Sprint 4.0
+# 🏆 BUET CSE Fest 2026 — DL Sprint 4.0
 
 ### Bengali Long-Form Speech Recognition & Speaker Diarization
 
@@ -11,6 +11,8 @@
 [![Kaggle](https://img.shields.io/badge/Platform-Kaggle-20BEFF.svg)](https://www.kaggle.com/)
 [![PyTorch](https://img.shields.io/badge/Framework-PyTorch-EE4C2C.svg)](https://pytorch.org/)
 [![pyannote](https://img.shields.io/badge/pyannote.audio-3.x-purple.svg)](https://github.com/pyannote/pyannote-audio)
+[![HuggingFace Model](https://img.shields.io/badge/🤗_Model-Bangla__Diarizz-FFD21E.svg)](https://huggingface.co/AdilShamim8/Bangla_Diarizz)
+[![HuggingFace Space](https://img.shields.io/badge/🤗_Demo-Bengali__Speaker__Diarization-FFD21E.svg)](https://huggingface.co/spaces/AdilShamim8/Bengali_Speaker_Diarization)
 
 <br/>
 
@@ -23,13 +25,14 @@
 
 ---
 
-## Table of Contents
+## 📋 Table of Contents
 
 - [Overview](#-overview)
 - [Competition Context](#-competition-context)
 - [Repository Structure](#-repository-structure)
 - [Task 1: Bengali Long-Form Speech Recognition](#-task-1-bengali-long-form-speech-recognition)
 - [Task 2: Bengali Speaker Diarization](#-task-2-bengali-speaker-diarization)
+- [Trained Model & Live Demo](#-trained-model--live-demo)
 - [Conference Paper](#-conference-paper)
 - [Tech Stack](#-tech-stack)
 - [Getting Started](#-getting-started)
@@ -39,7 +42,7 @@
 
 ---
 
-##  Overview
+## 🔍 Overview
 
 This repository contains **Team Envisage's** complete submission to the **DL Sprint 4.0** competition, organized as part of [BUET CSE Fest 2026](https://www.facebook.com/people/BUET-CSE-Fest-2026/61586079370169/). The competition consisted of two challenging Bengali speech processing tracks:
 
@@ -48,9 +51,15 @@ This repository contains **Team Envisage's** complete submission to the **DL Spr
 
 > Bengali, despite being one of the most widely spoken languages globally, remains significantly underrepresented in long-form speech technology — making this both a technically demanding and socially impactful challenge.
 
+### 🌟 Highlights
+
+- 🤗 **Published Model:** Our fine-tuned Bengali diarization model is publicly available on Hugging Face → [`AdilShamim8/Bangla_Diarizz`](https://huggingface.co/AdilShamim8/Bangla_Diarizz)
+- 🚀 **Live Demo:** Try our Bengali Speaker Diarization system interactively → [🤗 Space Demo](https://huggingface.co/spaces/AdilShamim8/Bengali_Speaker_Diarization)
+- 📄 **IEEE Conference Paper:** Full research paper included in the repository
+
 ---
 
-## Competition Context
+## 🎯 Competition Context
 
 | Detail | Info |
 |:---|:---|
@@ -88,9 +97,11 @@ BUET-CSE-Fest-2026/
 └── README.md
 ```
 
+> 💡 The fine-tuned diarization model is also hosted on Hugging Face for easy access: [`AdilShamim8/Bangla_Diarizz`](https://huggingface.co/AdilShamim8/Bangla_Diarizz)
+
 ---
 
-## Task 1: Bengali Long-Form Speech Recognition
+## 🗣️ Task 1: Bengali Long-Form Speech Recognition
 
 ### Problem
 
@@ -133,7 +144,7 @@ graph LR
 
 ---
 
-## Task 2: Bengali Speaker Diarization
+## 🎙️ Task 2: Bengali Speaker Diarization
 
 ### Problem
 
@@ -169,6 +180,8 @@ graph LR
 | **Clustering** | Centroid-based Agglomerative Clustering | Groups speaker segments by embedding similarity |
 | **Post-processing** | Overlap mitigation + Segment merging | Heuristic refinement of segment boundaries |
 
+> 🤗 **The final fine-tuned model is published at:** [`AdilShamim8/Bangla_Diarizz`](https://huggingface.co/AdilShamim8/Bangla_Diarizz)
+
 ### Evaluation Metric
 
 **Diarization Error Rate (DER):**
@@ -192,7 +205,77 @@ Models were also scored on **Real-Time Factor (RTF)**:
 
 ---
 
-## Conference Paper
+## 🤗 Trained Model & Live Demo
+
+### 📦 Model: `AdilShamim8/Bangla_Diarizz`
+
+Our fine-tuned Bengali speaker diarization model is publicly available on the Hugging Face Hub. It is built on top of `pyannote/segmentation-3.0`, fine-tuned on the official DL Sprint 4.0 Bengali diarization competition dataset, and paired with `wespeaker-voxceleb-resnet34-LM` embeddings for speaker clustering.
+
+| | |
+|:---|:---|
+| **🔗 Model Hub** | [`huggingface.co/AdilShamim8/Bangla_Diarizz`](https://huggingface.co/AdilShamim8/Bangla_Diarizz) |
+| **Base Model** | `pyannote/segmentation-3.0` |
+| **Embeddings** | `wespeaker-voxceleb-resnet34-LM` |
+| **Framework** | PyTorch + pyannote.audio 3.x |
+| **Task** | Speaker Diarization (Bengali) |
+| **Input** | Mono audio, 16kHz |
+| **Output** | RTTM-format speaker segments |
+
+**Quick Usage:**
+
+```python
+from pyannote.audio import Pipeline
+
+# Load the fine-tuned Bengali diarization pipeline
+pipeline = Pipeline.from_pretrained(
+    "AdilShamim8/Bangla_Diarizz",
+    use_auth_token="YOUR_HF_TOKEN"
+)
+
+# Run diarization on a Bengali audio file
+diarization = pipeline("bangla_audio.wav")
+
+# Print speaker segments
+for turn, _, speaker in diarization.itertracks(yield_label=True):
+    print(f"{turn.start:7.1f}s - {turn.end:7.1f}s  → {speaker}")
+
+# Export to RTTM format
+with open("output.rttm", "w") as rttm:
+    diarization.write_rttm(rttm)
+```
+
+---
+
+### 🚀 Live Demo: Bengali Speaker Diarization Space
+
+Try our model instantly — no setup required! Upload any Bengali audio file and get speaker-wise time segments in real time.
+
+<div align="center">
+
+### 🎧 [**Launch Live Demo →**](https://huggingface.co/spaces/AdilShamim8/Bengali_Speaker_Diarization)
+
+[![HuggingFace Space](https://img.shields.io/badge/🤗%20Hugging%20Face-Space%20Demo-blue)](https://huggingface.co/spaces/AdilShamim8/Bengali_Speaker_Diarization)
+
+</div>
+
+| | |
+|:---|:---|
+| **🔗 Space URL** | [`huggingface.co/spaces/AdilShamim8/Bengali_Speaker_Diarization`](https://huggingface.co/spaces/AdilShamim8/Bengali_Speaker_Diarization) |
+| **Interface** | Gradio Web UI |
+| **Input** | Upload audio file (WAV, MP3, etc.) |
+| **Output** | Time-stamped speaker segments with speaker IDs |
+| **Backend** | `AdilShamim8/Bangla_Diarizz` model pipeline |
+
+**Features:**
+- 🎤 Upload any Bengali audio (interviews, conversations, lectures, meetings)
+- ⚡ Real-time inference with speaker-wise timestamps
+- 🏷️ Automatic speaker labeling & segment visualization
+- 📥 Downloadable RTTM output for downstream tasks
+- 🌐 No local installation needed — runs entirely in-browser
+
+---
+
+## 📄 Conference Paper
 
 An **IEEE-format research paper** is included in the `BUET_Conference_paper/` directory, detailing our methodology, experimental design, and findings for the Bengali Speaker Diarization challenge. This was a required deliverable for the offline evaluation component.
 
@@ -200,7 +283,7 @@ An **IEEE-format research paper** is included in the `BUET_Conference_paper/` di
 
 ---
 
-##  Tech Stack
+## 🛠️ Tech Stack
 
 <div align="center">
 
@@ -210,6 +293,7 @@ An **IEEE-format research paper** is included in the `BUET_Conference_paper/` di
 | **ASR** | OpenAI Whisper (Bengali fine-tuned), Silero VAD |
 | **Diarization** | pyannote/segmentation-3.0, wespeaker-voxceleb-resnet34-LM |
 | **Audio Processing** | Demucs, librosa, soundfile |
+| **Deployment** | 🤗 Hugging Face Hub (Model) + 🤗 Spaces (Gradio Demo) |
 | **Compute** | Kaggle Notebooks (GPU P100 / T4 × 2) |
 | **Language** | Python 3.10+ |
 
@@ -217,7 +301,7 @@ An **IEEE-format research paper** is included in the `BUET_Conference_paper/` di
 
 ---
 
-##  Getting Started
+## 🚀 Getting Started
 
 ### Prerequisites
 
@@ -227,13 +311,37 @@ pip install demucs silero-vad librosa soundfile
 pip install onnxruntime pandas numpy
 ```
 
-### Reproduce ASR Inference
+### Option 1: Use the Published Model Directly (Recommended)
+
+The fastest way to get started — load the model from the Hugging Face Hub:
+
+```python
+from pyannote.audio import Pipeline
+
+pipeline = Pipeline.from_pretrained(
+    "AdilShamim8/Bangla_Diarizz",
+    use_auth_token="YOUR_HF_TOKEN"
+)
+
+diarization = pipeline("your_bangla_audio.wav")
+
+for turn, _, speaker in diarization.itertracks(yield_label=True):
+    print(f"{turn.start:.1f}s - {turn.end:.1f}s → {speaker}")
+```
+
+### Option 2: Try the Live Demo (Zero Setup)
+
+Just visit the Space — no code, no installation:
+
+👉 [**huggingface.co/spaces/AdilShamim8/Bengali_Speaker_Diarization**](https://huggingface.co/spaces/AdilShamim8/Bengali_Speaker_Diarization)
+
+### Option 3: Reproduce ASR Inference
 
 1. Open `Bengali Long-form Speech Recognition/bengali-long-form-speech-recognition.ipynb` on Kaggle
 2. Attach the competition dataset
 3. Run all cells — outputs the submission CSV with Bengali transcripts
 
-### Reproduce Diarization Inference
+### Option 4: Reproduce Diarization Inference
 
 1. Open `Bengali Speaker Diarization/bangla-diarizz.ipynb` on Kaggle
 2. Attach the competition dataset and model weight files:
@@ -241,7 +349,7 @@ pip install onnxruntime pandas numpy
    - `wespeaker-voxceleb-resnet34-lm-pytorch-default-v1.tar.gz`
 3. Run all cells — outputs RTTM-format speaker segments
 
-### Fine-tune the Segmentation Model
+### Option 5: Fine-tune the Segmentation Model
 
 ```
 Bengali Speaker Diarization/bengali-diarization-training.ipynb
@@ -251,7 +359,7 @@ This notebook walks through fine-tuning `pyannote/segmentation-3.0` on the offic
 
 ---
 
-##  Results
+## 📊 Results
 
 > *Detailed scores and leaderboard rankings can be found in `DL_Sprint_4.0_Team_Envisage_Submission_Summary.pdf`.*
 
@@ -263,22 +371,30 @@ This notebook walks through fine-tuning `pyannote/segmentation-3.0` on the offic
 
 ---
 
-##  Acknowledgements
+## 🙏 Acknowledgements
 
 - **[AI@BUET](https://www.facebook.com/people/BUET-CSE-Fest-2026/61586079370169/)** — Competition organizers & BUET CSE Fest 2026 hosts
 - **[pyannote.audio](https://github.com/pyannote/pyannote-audio)** — State-of-the-art speaker diarization toolkit by Hervé Bredin
 - **[WeSpeaker](https://github.com/wenet-e2e/wespeaker)** — Speaker embedding model toolkit
 - **[OpenAI Whisper](https://github.com/openai/whisper)** — Multilingual ASR foundation model
 - **[BengaliAI](https://bengali.ai/)** — Bengali Whisper fine-tuning & community resources
-- **[Bengali-Loop Benchmark](https://arxiv.org/abs/2602.14291)** — Community benchmarks for long-form Bangla ASR and speaker diarization
+- **[Hugging Face](https://huggingface.co/)** — Model hosting, Spaces deployment, and open-source ML infrastructure
 
 ---
 
-##  Citation
+## 📝 Citation
 
-If you find this work useful, please cite the competitions:
+If you find this work useful, please cite the competitions and our model:
 
 ```bibtex
+@misc{shamim2026bangladiarizz,
+  author    = {Adil Shamim},
+  title     = {Bangla Diarizz: Fine-tuned Bengali Speaker Diarization Model},
+  year      = {2026},
+  publisher = {Hugging Face},
+  url       = {https://huggingface.co/AdilShamim8/Bangla_Diarizz}
+}
+
 @misc{dlsprint4-asr-2026,
   author    = {Abdullah Muhammed Amimul Ehsan and Istiak Ahmmed Rifti and
                HM Shadman Tabib and Anik Saha and Masnoon Muztahid and Shahriar Kabir},
@@ -302,6 +418,8 @@ If you find this work useful, please cite the competitions:
 
 <div align="center">
 
-**Built with by Team Envisage for BUET CSE Fest 2026**
+**Built with ❤️ by Team Envisage for BUET CSE Fest 2026**
+
+[🤗 Model](https://huggingface.co/AdilShamim8/Bangla_Diarizz) · [🚀 Live Demo](https://huggingface.co/spaces/AdilShamim8/Bengali_Speaker_Diarization) · [📊 Kaggle ASR](https://www.kaggle.com/competitions/dl-sprint-4-0-bengali-long-form-speech-recognition) · [📊 Kaggle Diarization](https://www.kaggle.com/competitions/dl-sprint-4-0-bengali-speaker-diarization-challenge)
 
 </div>
