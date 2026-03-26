@@ -25,7 +25,7 @@
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Overview](#-overview)
 - [Competition Context](#-competition-context)
@@ -205,7 +205,7 @@ Models were also scored on **Real-Time Factor (RTF)**:
 
 ##  Trained Model & Live Demo
 
-### 📦Model: `AdilShamim8/Bangla_Diarizz`
+### Model: `AdilShamim8/Bangla_Diarizz`
 
 Our fine-tuned Bengali speaker diarization model is publicly available on the Hugging Face Hub. It is built on top of `pyannote/segmentation-3.0`, fine-tuned on the official DL Sprint 4.0 Bengali diarization competition dataset, and paired with `wespeaker-voxceleb-resnet34-LM` embeddings for speaker clustering.
 
@@ -250,7 +250,7 @@ Try our model instantly — no setup required! Upload any Bengali audio file and
 
 <div align="center">
 
-### 🎧 [**Launch Live Demo →**](https://huggingface.co/spaces/AdilShamim8/Bengali_Speaker_Diarization)
+### [**Launch Live Demo →**](https://huggingface.co/spaces/AdilShamim8/Bengali_Speaker_Diarization)
 
 [![HuggingFace Space](https://img.shields.io/badge/🤗%20Hugging%20Face-Space%20Demo-blue)](https://huggingface.co/spaces/AdilShamim8/Bengali_Speaker_Diarization)
 
@@ -258,7 +258,7 @@ Try our model instantly — no setup required! Upload any Bengali audio file and
 
 | | |
 |:---|:---|
-| **🔗 Space URL** | [`huggingface.co/spaces/AdilShamim8/Bengali_Speaker_Diarization`](https://huggingface.co/spaces/AdilShamim8/Bengali_Speaker_Diarization) |
+| **Space URL** | [`huggingface.co/spaces/AdilShamim8/Bengali_Speaker_Diarization`](https://huggingface.co/spaces/AdilShamim8/Bengali_Speaker_Diarization) |
 | **Interface** | Gradio Web UI |
 | **Input** | Upload audio file (WAV, MP3, etc.) |
 | **Output** | Time-stamped speaker segments with speaker IDs |
@@ -418,6 +418,6 @@ If you find this work useful, please cite the competitions and our model:
 
 **Built by Team Envisage for BUET CSE Fest 2026**
 
-[🤗 Model](https://huggingface.co/AdilShamim8/Bangla_Diarizz) · [🚀 Live Demo](https://huggingface.co/spaces/AdilShamim8/Bengali_Speaker_Diarization) · [📊 Kaggle ASR](https://www.kaggle.com/competitions/dl-sprint-4-0-bengali-long-form-speech-recognition) · [📊 Kaggle Diarization](https://www.kaggle.com/competitions/dl-sprint-4-0-bengali-speaker-diarization-challenge)
+[Model](https://huggingface.co/AdilShamim8/Bangla_Diarizz) · [Live Demo](https://huggingface.co/spaces/AdilShamim8/Bengali_Speaker_Diarization) · [Kaggle ASR](https://www.kaggle.com/competitions/dl-sprint-4-0-bengali-long-form-speech-recognition) · [Kaggle Diarization](https://www.kaggle.com/competitions/dl-sprint-4-0-bengali-speaker-diarization-challenge)
 
 </div>
