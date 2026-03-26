@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🏆 BUET CSE Fest 2026 — DL Sprint 4.0
+# BUET CSE Fest 2026 — DL Sprint 4.0
 
 ### Bengali Long-Form Speech Recognition & Speaker Diarization
 
@@ -23,7 +23,7 @@
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Overview](#-overview)
 - [Competition Context](#-competition-context)
@@ -39,7 +39,7 @@
 
 ---
 
-## 🔍 Overview
+##  Overview
 
 This repository contains **Team Envisage's** complete submission to the **DL Sprint 4.0** competition, organized as part of [BUET CSE Fest 2026](https://www.facebook.com/people/BUET-CSE-Fest-2026/61586079370169/). The competition consisted of two challenging Bengali speech processing tracks:
 
@@ -50,7 +50,7 @@ This repository contains **Team Envisage's** complete submission to the **DL Spr
 
 ---
 
-## 🎯 Competition Context
+## Competition Context
 
 | Detail | Info |
 |:---|:---|
@@ -90,7 +90,7 @@ BUET-CSE-Fest-2026/
 
 ---
 
-## 🗣️ Task 1: Bengali Long-Form Speech Recognition
+## Task 1: Bengali Long-Form Speech Recognition
 
 ### Problem
 
@@ -133,7 +133,7 @@ graph LR
 
 ---
 
-## 🎙️ Task 2: Bengali Speaker Diarization
+## Task 2: Bengali Speaker Diarization
 
 ### Problem
 
@@ -192,7 +192,7 @@ Models were also scored on **Real-Time Factor (RTF)**:
 
 ---
 
-## 📄 Conference Paper
+## Conference Paper
 
 An **IEEE-format research paper** is included in the `BUET_Conference_paper/` directory, detailing our methodology, experimental design, and findings for the Bengali Speaker Diarization challenge. This was a required deliverable for the offline evaluation component.
 
@@ -200,7 +200,7 @@ An **IEEE-format research paper** is included in the `BUET_Conference_paper/` di
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 <div align="center">
 
@@ -217,7 +217,7 @@ An **IEEE-format research paper** is included in the `BUET_Conference_paper/` di
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
@@ -251,7 +251,7 @@ This notebook walks through fine-tuning `pyannote/segmentation-3.0` on the offic
 
 ---
 
-## 📊 Results
+##  Results
 
 > *Detailed scores and leaderboard rankings can be found in `DL_Sprint_4.0_Team_Envisage_Submission_Summary.pdf`.*
 
@@ -263,7 +263,7 @@ This notebook walks through fine-tuning `pyannote/segmentation-3.0` on the offic
 
 ---
 
-## 🙏 Acknowledgements
+##  Acknowledgements
 
 - **[AI@BUET](https://www.facebook.com/people/BUET-CSE-Fest-2026/61586079370169/)** — Competition organizers & BUET CSE Fest 2026 hosts
 - **[pyannote.audio](https://github.com/pyannote/pyannote-audio)** — State-of-the-art speaker diarization toolkit by Hervé Bredin
@@ -274,7 +274,7 @@ This notebook walks through fine-tuning `pyannote/segmentation-3.0` on the offic
 
 ---
 
-## 📝 Citation
+##  Citation
 
 If you find this work useful, please cite the competitions:
 
@@ -302,8 +302,6 @@ If you find this work useful, please cite the competitions:
 
 <div align="center">
 
-**Built with ❤️ by Team Envisage for BUET CSE Fest 2026**
-
-[⬆ Back to Top](#-buet-cse-fest-2026--dl-sprint-40)
+**Built with by Team Envisage for BUET CSE Fest 2026**
 
 </div>
