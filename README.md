@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🏆 BUET CSE Fest 2026 — DL Sprint 4.0
+# BUET CSE Fest 2026 — DL Sprint 4.0
 
 ### Bengali Long-Form Speech Recognition & Speaker Diarization
 
@@ -42,7 +42,7 @@
 
 ---
 
-## 🔍 Overview
+## Overview
 
 This repository contains **Team Envisage's** complete submission to the **DL Sprint 4.0** competition, organized as part of [BUET CSE Fest 2026](https://www.facebook.com/people/BUET-CSE-Fest-2026/61586079370169/). The competition consisted of two challenging Bengali speech processing tracks:
 
@@ -51,15 +51,14 @@ This repository contains **Team Envisage's** complete submission to the **DL Spr
 
 > Bengali, despite being one of the most widely spoken languages globally, remains significantly underrepresented in long-form speech technology — making this both a technically demanding and socially impactful challenge.
 
-### 🌟 Highlights
+### Highlights
 
-- 🤗 **Published Model:** Our fine-tuned Bengali diarization model is publicly available on Hugging Face → [`AdilShamim8/Bangla_Diarizz`](https://huggingface.co/AdilShamim8/Bangla_Diarizz)
-- 🚀 **Live Demo:** Try our Bengali Speaker Diarization system interactively → [🤗 Space Demo](https://huggingface.co/spaces/AdilShamim8/Bengali_Speaker_Diarization)
-- 📄 **IEEE Conference Paper:** Full research paper included in the repository
+- **Published Model:** Our fine-tuned Bengali diarization model is publicly available on Hugging Face → [`AdilShamim8/Bangla_Diarizz`](https://huggingface.co/AdilShamim8/Bangla_Diarizz)
+- **Live Demo:** Try our Bengali Speaker Diarization system interactively → [Space Demo](https://huggingface.co/spaces/AdilShamim8/Bengali_Speaker_Diarization)
+- **IEEE Conference Paper:** Full research paper included in the repository
 
----
 
-## 🎯 Competition Context
+##  Competition Context
 
 | Detail | Info |
 |:---|:---|
@@ -73,7 +72,6 @@ This repository contains **Team Envisage's** complete submission to the **DL Spr
 - **Phase I (Online):** Kaggle submission evaluated on Public/Private test sets
 - **Phase II (Final):** Hidden test set + On-site presentation for top teams
 
----
 
 ## 📁 Repository Structure
 
@@ -97,7 +95,7 @@ BUET-CSE-Fest-2026/
 └── README.md
 ```
 
-> 💡 The fine-tuned diarization model is also hosted on Hugging Face for easy access: [`AdilShamim8/Bangla_Diarizz`](https://huggingface.co/AdilShamim8/Bangla_Diarizz)
+>  The fine-tuned diarization model is also hosted on Hugging Face for easy access: [`AdilShamim8/Bangla_Diarizz`](https://huggingface.co/AdilShamim8/Bangla_Diarizz)
 
 ---
 
@@ -180,7 +178,7 @@ graph LR
 | **Clustering** | Centroid-based Agglomerative Clustering | Groups speaker segments by embedding similarity |
 | **Post-processing** | Overlap mitigation + Segment merging | Heuristic refinement of segment boundaries |
 
-> 🤗 **The final fine-tuned model is published at:** [`AdilShamim8/Bangla_Diarizz`](https://huggingface.co/AdilShamim8/Bangla_Diarizz)
+> **The final fine-tuned model is published at:** [`AdilShamim8/Bangla_Diarizz`](https://huggingface.co/AdilShamim8/Bangla_Diarizz)
 
 ### Evaluation Metric
 
@@ -205,9 +203,9 @@ Models were also scored on **Real-Time Factor (RTF)**:
 
 ---
 
-## 🤗 Trained Model & Live Demo
+##  Trained Model & Live Demo
 
-### 📦 Model: `AdilShamim8/Bangla_Diarizz`
+### 📦Model: `AdilShamim8/Bangla_Diarizz`
 
 Our fine-tuned Bengali speaker diarization model is publicly available on the Hugging Face Hub. It is built on top of `pyannote/segmentation-3.0`, fine-tuned on the official DL Sprint 4.0 Bengali diarization competition dataset, and paired with `wespeaker-voxceleb-resnet34-LM` embeddings for speaker clustering.
 
@@ -246,7 +244,7 @@ with open("output.rttm", "w") as rttm:
 
 ---
 
-### 🚀 Live Demo: Bengali Speaker Diarization Space
+###  Live Demo: Bengali Speaker Diarization Space
 
 Try our model instantly — no setup required! Upload any Bengali audio file and get speaker-wise time segments in real time.
 
@@ -267,11 +265,11 @@ Try our model instantly — no setup required! Upload any Bengali audio file and
 | **Backend** | `AdilShamim8/Bangla_Diarizz` model pipeline |
 
 **Features:**
-- 🎤 Upload any Bengali audio (interviews, conversations, lectures, meetings)
-- ⚡ Real-time inference with speaker-wise timestamps
-- 🏷️ Automatic speaker labeling & segment visualization
-- 📥 Downloadable RTTM output for downstream tasks
-- 🌐 No local installation needed — runs entirely in-browser
+-  Upload any Bengali audio (interviews, conversations, lectures, meetings)
+-  Real-time inference with speaker-wise timestamps
+-  Automatic speaker labeling & segment visualization
+-  Downloadable RTTM output for downstream tasks
+-  No local installation needed — runs entirely in-browser
 
 ---
 
@@ -283,7 +281,7 @@ An **IEEE-format research paper** is included in the `BUET_Conference_paper/` di
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 <div align="center">
 
@@ -301,7 +299,7 @@ An **IEEE-format research paper** is included in the `BUET_Conference_paper/` di
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
@@ -359,7 +357,7 @@ This notebook walks through fine-tuning `pyannote/segmentation-3.0` on the offic
 
 ---
 
-## 📊 Results
+## Results
 
 > *Detailed scores and leaderboard rankings can be found in `DL_Sprint_4.0_Team_Envisage_Submission_Summary.pdf`.*
 
@@ -371,7 +369,7 @@ This notebook walks through fine-tuning `pyannote/segmentation-3.0` on the offic
 
 ---
 
-## 🙏 Acknowledgements
+## Acknowledgements
 
 - **[AI@BUET](https://www.facebook.com/people/BUET-CSE-Fest-2026/61586079370169/)** — Competition organizers & BUET CSE Fest 2026 hosts
 - **[pyannote.audio](https://github.com/pyannote/pyannote-audio)** — State-of-the-art speaker diarization toolkit by Hervé Bredin
@@ -382,7 +380,7 @@ This notebook walks through fine-tuning `pyannote/segmentation-3.0` on the offic
 
 ---
 
-## 📝 Citation
+##  Citation
 
 If you find this work useful, please cite the competitions and our model:
 
@@ -418,7 +416,7 @@ If you find this work useful, please cite the competitions and our model:
 
 <div align="center">
 
-**Built with ❤️ by Team Envisage for BUET CSE Fest 2026**
+**Built by Team Envisage for BUET CSE Fest 2026**
 
 [🤗 Model](https://huggingface.co/AdilShamim8/Bangla_Diarizz) · [🚀 Live Demo](https://huggingface.co/spaces/AdilShamim8/Bengali_Speaker_Diarization) · [📊 Kaggle ASR](https://www.kaggle.com/competitions/dl-sprint-4-0-bengali-long-form-speech-recognition) · [📊 Kaggle Diarization](https://www.kaggle.com/competitions/dl-sprint-4-0-bengali-speaker-diarization-challenge)
 
